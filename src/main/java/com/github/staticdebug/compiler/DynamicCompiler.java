@@ -146,7 +146,9 @@ public class DynamicCompiler {
 	 * @return the compilation options
 	 */
 	private List<String> createOptions() {
-		int complianceLevel = launcher.getFactory().getEnvironment().getComplianceLevel();
+		// it is not possible to compile a newest version of java
+		int complianceLevel = Math.min(getJavaVersion(), launcher.getFactory().getEnvironment().getComplianceLevel());
+
 		List<String> options = new ArrayList<>(asList("-nowarn", "-source", "1." + complianceLevel, "-target", "1." + complianceLevel));
 		String[] sourceClasspath = launcher.getModelBuilder().getSourceClasspath();
 		if (sourceClasspath != null && sourceClasspath.length > 0) {
@@ -159,5 +161,11 @@ public class DynamicCompiler {
 			options.add(sb.toString());
 		}
 		return options;
+	}
+
+	private int getJavaVersion() {
+		String version = System.getProperty("java.version");
+		int pos = version.indexOf('.');
+		return Integer.parseInt(version.substring(pos + 1, pos + 2));
 	}
 }
