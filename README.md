@@ -1,4 +1,4 @@
-# CtDynamicCompilation [![Build Status](https://travis-ci.org/tdurieux/CtDynamicCompilation.svg?branch=master)](https://travis-ci.org/tdurieux/CtDynamicCompilation)
+# CtDynamicCompilation [![Build Status](https://travis-ci.org/tdurieux/CtDynamicCompilation.svg?branch=master)](https://travis-ci.org/tdurieux/CtDynamicCompilation) [![Coverage Status](https://coveralls.io/repos/github/tdurieux/CtDynamicCompilation/badge.svg?branch=master)](https://coveralls.io/github/tdurieux/CtDynamicCompilation?branch=master)
 
 This project is used to dynamically compile the changes made on Spoon model.
 
