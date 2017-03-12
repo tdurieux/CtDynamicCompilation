@@ -11,5 +11,5 @@ env:
   global:
     secure: Jz8oRK2YVFrn9otoNoB58cQVovZhr7SfWr3NEFIEEalAZdiCMYk3h6wqoOKP2FvkT/GkoG9OJzXhyLIxEJJr7wsvMyx0Raxf6uXasx0oKEYltyivwbw4HJMFcCOkLpsP0VWkXGH3IbpNFG3x35Xs6u784n7Km4KERQhVVj2wFBS0Vrp9sBeyEoZAAx+1+aHbh5di5mL4EBoEyhRetr9a+MkzHTEf/EkADlBm+AyNrUQSYe47cP3LH91RVHcV2KOv3ZLe9sU9qiqTW5xAEqQbh3mZHiVsOuEmHDTL8/Fmescxwxd1x9arWtJZ2DGvtq1BqIXOF2ETv2shY7TNLoj/nMpUzOzdZ+ednNbr/yPpRtItR3Eb8+4i0sw1t+3SrrWG1foErDFVmYx0pIiZ45GchWcfCvBUcJdi5fTTTh4FJtW4u16NY0Lhq2WH49pnlIT96bXSGjHSd3Tu1r2Qm3MR69hMm0p9i7JE56hFTZPrzeDpRN66AZwxQcgTK1L9tMKbNnY9rdf8PtOk1CHxfcEeFv3seqTA/E0U4bttXZvRRxte/rZ3LzCFoXjiu1wiq3/oiOJCCqgelDP02TbQTOqk2RVUC++XuOo+Nj5DGBw3OEmzdJ6DDy3W08PCxsRuhAsKJD5+YExn5116LUAwmANJ0EbXCP8pIdKzJggU9J9Hmrw=
 after_success:
-- '[[ $TRAVIS_BRANCH == "master" ]] && { mvn deploy --settings .travis-settings.xml
+- '[[ $TRAVIS_BRANCH == "master" ]] && [[ $TRAVIS_JDK_VERSION == "oraclejdk7" ]] && { mvn deploy --settings .travis-settings.xml
   -DskipTests=true -B; };'
